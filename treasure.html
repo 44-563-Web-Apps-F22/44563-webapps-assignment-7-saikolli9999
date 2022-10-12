@@ -35,6 +35,56 @@
         height:70px;
     }
 </style>
+<script>
+    
+    var ids=["trImg1","trImg2","trImg3","trImg4","trImg5","trImg6","trImg7","trImg8","trImg9","trImg10","trImg11","trImg12","trImg13","trImg14","trImg15","trImg16","trImg17","trImg18","trImg19","trImg20","trImg21","trImg22","trImg23","trImg24","trImg25"];
+    var chestCount=0;
+    var score=0;
+    var lastCheck=12;
+    var treasureLocation=18;
+
+
+    function check(position) {
+    let imgId = ids[position];
+   document.getElementById(imgId).src= (position==treasureLocation)? "treasure.jpg" : "treasureEmpty.jpg";
+   chestCount=chestCount+1;
+   score=score+1;
+   document.getElementById("chests").innerHTML=chestCount;
+   document.getElementById("score").innerHTML=score;
+   lastCheck=position;
+    }
+    function help(index) {
+ let col= lastCheck%5;
+  let row=Math.floor(lastCheck/5);
+  let retStr="";
+  let colTr=Math.floor(treasureLocation/5);
+  let rowTr = treasureLocation%5;
+  score=score+2;
+  document.getElementById("score").innerHTML=score;
+  if(row==rowTr) {
+    if(colTr < col) {
+    retStr="left";
+    }
+    else {
+        retStr="right";
+    }
+  }
+  else if(col==colTr) {
+    if(rowTr < row) {
+    retStr="up";
+    }
+    else {
+        retStr="down";
+    }
+  }
+  else {
+    retStr="Sorry, no help available";
+  }
+
+  document.getElementById("help").innerHTML=retStr;
+
+}
+</script>
 </head>
 <body>
     <h1>Treasure hunt Kolli Sai Kumar</h1>
@@ -48,19 +98,19 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-<img src="treasureChest.jpg">
+            <img  src="treasureChest.jpg" id="trImg1" onclick="check(0);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img id="trImg2" src="treasureChest.jpg" onclick="check(1);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img id="trImg3" src="treasureChest.jpg" onclick="check(2);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img id="trImg4" src="treasureChest.jpg" onclick="check(3);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img id="trImg5" src="treasureChest.jpg" onclick="check(4);">
             </div>
         </div>
 
@@ -68,76 +118,76 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg6" onclick="check(5);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg7" onclick="check(6);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg8" onclick="check(7);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg9" onclick="check(8);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <img src="treasureChest.jpg">
-            </div>
-            <div class="col-sm">
-                <img src="treasureChest.jpg">
-            </div>
-            <div class="col-sm">
-                <img src="Help.jpg">
-            </div>
-            <div class="col-sm">
-                <img src="treasureChest.jpg">
-            </div>
-            <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg10" onclick="check(9);">
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg11" onclick="check(10);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg12" onclick="check(11);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="Help.jpg" id="trImg13" onclick="help(12);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg14" onclick="check(13);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg15" onclick="check(14);">
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg16" onclick="check(15);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg17" onclick="check(16);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg18" onclick="check(17);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg19" onclick="check(18);">
             </div>
             <div class="col-sm">
-                <img src="treasureChest.jpg">
+                <img src="treasureChest.jpg" id="trImg20" onclick="check(19);">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="treasureChest.jpg" id="trImg21" onclick="check(20);">
+            </div>
+            <div class="col-sm">
+                <img src="treasureChest.jpg" id="trImg22" onclick="check(21);">
+            </div>
+            <div class="col-sm">
+                <img src="treasureChest.jpg" id="trImg23" onclick="check(22);">
+            </div>
+            <div class="col-sm">
+                <img src="treasureChest.jpg" id="trImg24" onclick="check(23);">
+            </div>
+            <div class="col-sm">
+                <img src="treasureChest.jpg" id="trImg25" onclick="check(24);">
             </div>
         </div>
     </div>
