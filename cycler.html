@@ -35,7 +35,10 @@
 	
 	<!-- <p> Press the button to create an new element of type div and then add it to the container.
 		</p> -->
+		<br> <br>
 		<button onclick="makeNewDiv()">Add value</button>
+		<button onclick="get()">Get</button>
+		<button onclick="spin()" >Spin</button>
 	
 	
 </body>
@@ -50,6 +53,23 @@
 		let container = document.getElementById('target')
 		container.appendChild(element)
 		
+	}
+	function get() {
+var cyclerItems = document.getElementsByClassName("cycler");
+ if(cyclerItems.length>0) {
+	cyclerItems[cyclerItems.length-1].remove()	;
+
+ }
+
+	}
+	function spin() {
+		var cyclerItems = document.getElementsByClassName("cycler");
+ 	if(cyclerItems.length>1) {
+	var removedItem=cyclerItems[cyclerItems.length-1];
+	cyclerItems[cyclerItems.length-1].remove()	;
+	let container = document.getElementById('target')
+		container.insertBefore(removedItem,container.firstChild);
+ }
 	}
 </script>
 </html>	
