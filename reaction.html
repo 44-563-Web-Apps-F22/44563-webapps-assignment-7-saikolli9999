@@ -19,6 +19,8 @@
   <button  class="btn btn-primary"  onclick="startTime();">
     Start Timer</button>
     <button class="btn btn-info" onclick="recordReact();">React Now</button>
+    <button class="btn btn-success" onclick="startTimeRandom();">Start Random Time</button>
+
   
   
   <script> 
@@ -43,6 +45,26 @@
       document.getElementById("target").innerHTML="Time was "+(buttonTIme-myTime);
     }
   },3000)
+
+  }
+
+  function startTimeRandom() {
+    let RandomStartTime = Math.floor(Math.random() * (10 - 2 + 1) ) + 2;
+   for(let i=0;i<=RandomStartTime;i++) {
+    setTimeout(function() {
+      document.getElementById("countdown").innerHTML=i;
+    },(RandomStartTime-i)*1000);
+  }
+
+  setTimeout(function() {
+    if(myTime==undefined) {
+      document.getElementById("target").innerHTML="Too Slow";
+    }
+    else {
+      let buttonTIme=Date.now();
+      document.getElementById("target").innerHTML="Time was "+(buttonTIme-myTime);
+    }
+  },RandomStartTime*1000)
 
   }
 

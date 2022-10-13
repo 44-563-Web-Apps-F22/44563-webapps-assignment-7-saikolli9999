@@ -39,6 +39,7 @@
 		<button onclick="makeNewDiv()">Add value</button>
 		<button onclick="get()">Get</button>
 		<button onclick="spin()" >Spin</button>
+		<button onclick="Swap()" >Swap</button>
 </body>
 <script>
 	function makeNewDiv(){
@@ -66,7 +67,21 @@ var cyclerItems = document.getElementsByClassName("cycler");
 	cyclerItems[cyclerItems.length-1].remove()	;
 	let container = document.getElementById('target')
 		container.insertBefore(removedItem,container.firstChild);
- }
+ 	}
 	}
+
+	function Swap() {
+		var cyclerItems = document.getElementsByClassName("cycler");
+		let rand1 = Math.floor(Math.random() * cyclerItems.length)
+            let rand2 = Math.floor(Math.random() * cyclerItems.length)
+            let item1 = document.getElementsByClassName("cycler")[rand1]
+            let item2 = document.getElementsByClassName("cycler")[rand2]
+            if(cyclerItems.length > 1) {
+                let elem = item1.innerHTML;
+                item1.innerHTML = item2.innerHTML;
+                item2.innerHTML = elem;
+            }
+	}
+
 </script>
 </html>	
